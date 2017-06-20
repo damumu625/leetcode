@@ -12,14 +12,51 @@ package com.zym.leetcode;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Test1 {
     @Test
-    public void test(){
+    public void test() {
         HashMap<String, Integer> map1 = new HashMap<>();
         map1.put("test", 1);
-        HashMap<String, Integer> map2 = (HashMap)map1.clone();
-        map2.put("test",2);
+        HashMap<String, Integer> map2 = (HashMap) map1.clone();
+        map2.put("test", 2);
         System.out.print(map1.get("test"));
+    }
+
+    @Test
+    public void test2() {
+        int i = 1;
+        System.out.print((i++));
+        System.out.print(i);
+        System.out.print("2"+3+4);
+    }
+
+    @Test
+    public void test3() {
+        String clusterAddress = "10.153.90.2:2181,10.153.90.3:2181,10.153.90.4:2181,10.153.90.5:2181";
+        int last2181 = clusterAddress.indexOf("2181");
+        if (last2181 == -1) {
+            last2181 = clusterAddress.indexOf("9092");
+        }
+        int lastComma = clusterAddress.substring(0, last2181).lastIndexOf("\"");
+        String address = clusterAddress.substring(lastComma + 1, last2181) + "2181";
+        System.out.println("address = " + address);
+    }
+
+    @Test
+    public void test4() {
+        Map<Integer, Integer> map = new HashMap<>(4);
+        for (int i = 0; i < 16; i++) {
+            map.put(i, i);
+        }
+        map.put(0, 0);
+    }
+
+    @Test
+    public void test5() {
+        int x = 1;
+        float y = 2;
+        System.out.println(x/y);
     }
 }

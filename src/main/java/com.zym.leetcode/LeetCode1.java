@@ -1,7 +1,7 @@
 /*******************************************************
  * Copyright (C) 2017 iQIYI.COM - All Rights Reserved
  * <p/>
- * This file is part of LeetCode project.
+ * This file is part of leetcode project.
  * Unauthorized copy of this file, via any medium is strictly prohibited.
  * Proprietary and Confidential.
  * <p/>
@@ -9,34 +9,45 @@
  *******************************************************/
 package com.zym.leetcode;
 
-import java.util.Stack;
+/*
+    树的最小深度
+ */
+
 public class LeetCode1 {
-    public static void main(String[] args){
-        String[] s = {"2", "1", "+", "4", "*"};
-        System.out.print(evalRPN(s));
+    public static void main(String[] args) {
+        TreeNode t0 = new TreeNode(0);
+        TreeNode t1 = new TreeNode(0);
+        TreeNode t2 = new TreeNode(0);
+        TreeNode t3 = new TreeNode(0);
+        TreeNode t4 = new TreeNode(0);
+        TreeNode t5 = new TreeNode(0);
+        t0.left = t1;
+        t0.right = t2;
+        t1.left = t3;
+        t3.right = t4;
+        t2.left = t5;
+        System.out.print(run(t1));
     }
-    public static int evalRPN(String[] tokens) {
-        Stack<Integer> stack = new Stack<Integer>();
-        for(int i = 0;i<tokens.length;i++){
-            switch(tokens[i]){
-                case "+":
-                    stack.push(stack.pop()+stack.pop());
-                    break;
-                case "-":
-                    stack.push(-(stack.pop()-stack.pop()));
-                    break;
-                case "*":
-                    stack.push(stack.pop()*stack.pop());
-                    break;
-                case "/":
-                    int t = stack.pop();
-                    int s = stack.pop();
-                    stack.push(s/t);
-                    break;
-                default:
-                    stack.push(Integer.valueOf(tokens[i]));
-            }
+
+    private static int run(TreeNode root) {
+        if (root == null) {
+            return 0;
         }
-        return stack.pop();
+        int left = run(root.left);
+        int right = run(root.right);
+        if (root.left == null || root.right == null) {
+            return left + right + 1;
+        }
+        return left > right ? right + 1 : left + 1;
+    }
+}
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int x) {
+        val = x;
     }
 }
