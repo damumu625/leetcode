@@ -9,12 +9,23 @@
  *******************************************************/
 
 package com.zym.leetcode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+    }
+    class TreeNode{
+        TreeNode[] chilren;
+        int val;
+    }
+}
+/*    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int unknown;
         boolean error;
@@ -57,7 +68,7 @@ public class Main {
                 System.out.println(-1);
             }
         }
-    }
+    }*/
 /*    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -111,4 +122,4 @@ public class Main {
         }
         return sum;
     }*/
-}
+

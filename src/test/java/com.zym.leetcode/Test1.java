@@ -11,7 +11,9 @@ package com.zym.leetcode;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Test1 {
@@ -58,5 +60,20 @@ public class Test1 {
         int x = 1;
         float y = 2;
         System.out.println(x/y);
+    }
+
+    @Test
+    public void test6() {
+        List list = new ArrayList();
+        list.add(1);
+        list.add(2);
+        list.add(0,0);
+        System.out.print(list);
+    }
+
+    @Test
+    public void test7() {
+        String s = "012345";
+        System.out.println(s.substring(5,6));
     }
 }
