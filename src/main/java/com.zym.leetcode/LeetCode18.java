@@ -43,7 +43,7 @@ public class LeetCode18 {
     }
 
     public static UndirectedGraphNode cloneGraph1(UndirectedGraphNode node) {
-        return cloneGraph1(node, new HashMap<>());
+        return cloneGraph1(node, new HashMap<Integer, UndirectedGraphNode>());
     }
 
     public static UndirectedGraphNode cloneGraph1(UndirectedGraphNode node, Map<Integer, UndirectedGraphNode> map) {
