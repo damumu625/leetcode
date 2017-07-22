@@ -13,6 +13,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Test1 {
     @Test
@@ -29,7 +30,7 @@ public class Test1 {
         int i = 1;
         System.out.print((i++));
         System.out.print(i);
-        System.out.print("2"+3+4);
+        System.out.print("2" + 3 + 4);
     }
 
     @Test
@@ -57,7 +58,7 @@ public class Test1 {
     public void test5() {
         int x = 1;
         float y = 2;
-        System.out.println(x/y);
+        System.out.println(x / y);
     }
 
     @Test
@@ -65,18 +66,18 @@ public class Test1 {
         List list = new ArrayList();
         list.add(1);
         list.add(2);
-        list.add(0,0);
+        list.add(0, 0);
         System.out.print(list);
     }
 
     @Test
     public void test7() {
         String s = "012345";
-        System.out.println(s.substring(5,6));
+        System.out.println(s.substring(5, 6));
     }
 
     @Test
-    public void test8(){
+    public void test8() {
         List<BigDecimal> prices = Arrays.asList(
                 new BigDecimal("10"), new BigDecimal("30"), new BigDecimal("17"),
                 new BigDecimal("20"), new BigDecimal("15"), new BigDecimal("18"),
@@ -95,5 +96,13 @@ public class Test1 {
                         .reduce(BigDecimal.ZERO, BigDecimal::add);
         System.out.println("Total of discounted prices: " + totalOfDiscountedPrices);
         System.out.println(prices.stream().count());
-     }
+    }
+
+    @Test
+    public void test9() {
+        ConcurrentHashMap<String,Integer> concurrentHashMap = new ConcurrentHashMap<>();
+        concurrentHashMap.put("1",1);
+        int value = concurrentHashMap.get("1");
+        System.out.println(value);
+    }
 }
