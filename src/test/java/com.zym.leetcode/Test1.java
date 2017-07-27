@@ -105,4 +105,10 @@ public class Test1 {
         int value = concurrentHashMap.get("1");
         System.out.println(value);
     }
+    @Test
+    public void test10(){
+        for (int i = 3; i < 2; i++) {
+
+        }
+    }
 }
